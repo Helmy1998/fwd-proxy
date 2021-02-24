@@ -5,10 +5,10 @@ services:
     build: squid/
     image: squid-reverse
     env_file: gwproxy.env
-      #volumes:
-        #- "./logs:/var/log/squid"
+      volumes:
+         "./logs:/var/log/squid"
     ports:
-      - "8080:8080"
+      - "3128:3128"
     network_mode: host
     restart: always
     sysctls:
